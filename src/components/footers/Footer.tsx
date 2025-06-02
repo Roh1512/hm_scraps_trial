@@ -6,8 +6,8 @@ import Logo from "../../assets/HMHAA-LOGO_PRIMARY COLOR.svg";
 const Footer = () => {
   return (
     <>
-      <footer className="footer sm:footer-horizontal bg-base-300 text-base-content p-10 w-full grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-10">
-        <nav className="text-lg p-0">
+      <footer className="footer sm:footer-horizontal bg-base-300 text-base-content p-10 w-full grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        <nav className="text-lg">
           <h6 className="footer-title">HM Scraps</h6>
           <NavLink
             to={"/"}
