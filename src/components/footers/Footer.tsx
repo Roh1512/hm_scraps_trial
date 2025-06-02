@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <>
       <footer className="footer sm:footer-horizontal bg-base-300 text-base-content p-10 w-full grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        <nav className="text-lg">
+        <nav className="text-md">
           <h6 className="footer-title">HM Scraps</h6>
           <NavLink
             to={"/"}
