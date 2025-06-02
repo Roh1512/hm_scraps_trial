@@ -98,8 +98,8 @@ const Footer = () => {
           </Link>
         </aside>
       </footer>
-      <footer className="footer sm:footer-horizontal footer-center bg-black text-gray-300 p-4 text-md">
-        <aside className="grid-flow-col items-center text-lg">
+      <footer className="footer sm:footer-horizontal footer-center bg-black text-base-300 p-4 text-md">
+        <aside className="grid-flow-col items-center text-sm">
           <p className="flex flex-col items-center justify-center gap-2">
             <span>Copyright © {new Date().getFullYear()}</span>
             <span>
