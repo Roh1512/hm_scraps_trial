@@ -32,41 +32,77 @@ const ContactForm: React.FC = () => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  // const handleSubmit = (e: React.FormEvent) => {
+  //   e.preventDefault();
+
+  //   try {
+  //     const { name, phone, email, message } = formData;
+
+  //     const text = `Hello, I'm ${name}.\nMessage: ${message}.\nPhone: ${phone}\nEmail: ${email}`;
+  //     const encodedText = encodeURIComponent(text);
+  //     const recipientNumber = "966548581513"; // No '+' sign
+
+  //     const isMobile =
+  //       /Android|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i.test(
+  //         navigator.userAgent
+  //       );
+  //     const baseUrl = isMobile
+  //       ? `https://wa.me/${recipientNumber}?text=${encodedText}`
+  //       : `https://api.whatsapp.com/send?phone=${recipientNumber}&text=${encodedText}`;
+
+  //     window.open(baseUrl, "_blank");
+
+  //     setStatusMessage({
+  //       type: "success",
+  //       text: "WhatsApp message window opened successfully.",
+  //     });
+  //   } catch (err) {
+  //     console.error(err);
+  //     setStatusMessage({
+  //       type: "error",
+  //       text: "Failed to open WhatsApp. Please try again.",
+  //     });
+  //   } finally {
+  //     setFormData({ name: "", phone: "", email: "", message: "" });
+
+  //     // Clear the message after a few seconds
+  //     setTimeout(() => setStatusMessage(null), 4000);
+  //   }
+  // };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     try {
-      const { name, phone, email, message } = formData;
+      const response = await fetch(
+        "https://form.saasa.dev/api/forms/your-form-id",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
 
-      const text = `Hello, I'm ${name}.\nMessage: ${message}.\nPhone: ${phone}\nEmail: ${email}`;
-      const encodedText = encodeURIComponent(text);
-      const recipientNumber = "966548581513"; // No '+' sign
-
-      const isMobile =
-        /Android|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i.test(
-          navigator.userAgent
-        );
-      const baseUrl = isMobile
-        ? `https://wa.me/${recipientNumber}?text=${encodedText}`
-        : `https://api.whatsapp.com/send?phone=${recipientNumber}&text=${encodedText}`;
-
-      window.open(baseUrl, "_blank");
-
-      setStatusMessage({
-        type: "success",
-        text: "WhatsApp message window opened successfully.",
-      });
-    } catch (err) {
-      console.error(err);
+      if (response.ok) {
+        setStatusMessage({
+          type: "success",
+          text: "Message sent successfully! We will get back to you soon.",
+        });
+        setFormData({ name: "", email: "", phone: "", message: "" });
+      } else {
+        setStatusMessage({
+          type: "error",
+          text: "Failed to send message. Please try again later.",
+        });
+      }
+    } catch (error) {
+      console.log(error);
       setStatusMessage({
         type: "error",
-        text: "Failed to open WhatsApp. Please try again.",
+        text: "An error occurred while sending your message. Please try again later.",
       });
-    } finally {
-      setFormData({ name: "", phone: "", email: "", message: "" });
-
-      // Clear the message after a few seconds
-      setTimeout(() => setStatusMessage(null), 4000);
     }
   };
 
