@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <>
       <footer className="footer sm:footer-horizontal bg-base-300 text-base-content p-10 w-full grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        <nav className="text-md">
+        <nav className="text-md md:text-lg">
           <h6 className="footer-title">HM Scraps</h6>
           <NavLink
             to={"/"}
@@ -88,12 +88,12 @@ const Footer = () => {
             ansarishams333@gmail.com
           </Link>
         </nav>
-        <aside className="flex justify-center items-center mx-auto md:mx-auto mt-6 md:mt-0 h-full order-2 md:order-3">
+        <aside className="flex justify-center items-center mx-auto md:mx-auto h-full order-2 md:order-3">
           <Link to={"/"} className="btn btn-ghost text-xl p-0">
             <img
               src={Logo}
               alt="Logo"
-              className="h-40 w-auto max-w-full object-contain"
+              className="h-40 md:h-60 w-auto max-w-full object-contain"
             />
           </Link>
         </aside>
