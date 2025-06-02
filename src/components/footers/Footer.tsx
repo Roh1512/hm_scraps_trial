@@ -6,7 +6,7 @@ import Logo from "../../assets/HMHAA-LOGO_PRIMARY COLOR.svg";
 const Footer = () => {
   return (
     <>
-      <footer className="footer sm:footer-horizontal bg-base-300 text-base-content p-10 w-full flex flex-col md:flex-row items-start justify-between">
+      <footer className="footer sm:footer-horizontal bg-base-300 text-base-content p-10 w-full grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-6">
         <nav className="text-lg">
           <h6 className="footer-title">HM Scraps</h6>
           <NavLink
@@ -50,7 +50,16 @@ const Footer = () => {
             Contact
           </NavLink>
         </nav>
-        <nav className="text-lg">
+        {/* <aside className="flex justify-center items-center mx-auto md:mx-0 mt-6 md:mt-0 h-full">
+          <Link to={"/"} className="btn btn-ghost text-xl">
+            <img
+              src={Logo}
+              alt="Logo"
+              className="h-60 w-auto max-w-full object-contain"
+            />
+          </Link>
+        </aside> */}
+        <nav className="text-lg order-3 md:order-2">
           <h6 className="footer-title">Contact Details</h6>
           <Link
             to="tel:+966582500879"
@@ -79,12 +88,12 @@ const Footer = () => {
             ansarishams333@gmail.com
           </Link>
         </nav>
-        <aside className="grid-flow-col items-center mx-auto md:mx-0 mt-6 md:mt-0">
+        <aside className="flex justify-center items-center mx-auto md:mx-0 mt-6 md:mt-0 h-full order-2 md:order-3">
           <Link to={"/"} className="btn btn-ghost text-xl">
             <img
               src={Logo}
               alt="Logo"
-              className="h-40 sm:h-30 md:h-40 lg:h-50 w-auto max-w-full object-contain"
+              className="h-60 w-auto max-w-full object-contain"
             />
           </Link>
         </aside>

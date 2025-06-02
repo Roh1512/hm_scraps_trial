@@ -10,9 +10,7 @@ const navLinks = [
 
 const Header = () => {
   return (
-    <header
-      className="navbar bg-base-100 shadow-sm fixed z-10 top-0"
-    >
+    <header className="navbar bg-base-100 shadow-sm fixed z-10 top-0">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -98,12 +96,7 @@ const Header = () => {
         </nav>
       </div>
       <div className="navbar-end">
-        <NavLink
-          to="/contact"
-          className={({ isActive }) =>
-            `btn btn-base ${isActive ? "text-primary" : "text-base-content"}`
-          }
-        >
+        <NavLink to="/contact" className="btn btn-primary">
           Contact Us
         </NavLink>
       </div>
