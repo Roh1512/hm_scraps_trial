@@ -20,6 +20,7 @@ const ContactForm: React.FC = () => {
     type: "success" | "error";
     text: string;
   } | null>(null);
+  const [loading, setLoading] = useState<boolean>(false);
 
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
@@ -36,6 +37,7 @@ const ContactForm: React.FC = () => {
     e.preventDefault();
 
     try {
+      setLoading(true);
       const response = await fetch(
         "https://formapi.saasa.shop/api/data/683d42447259f1c23b80a664",
         {
@@ -60,11 +62,14 @@ const ContactForm: React.FC = () => {
         });
       }
     } catch (error) {
+      setLoading(false);
       console.log(error);
       setStatusMessage({
         type: "error",
         text: "An error occurred while sending your message. Please try again later.",
       });
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -133,8 +138,19 @@ const ContactForm: React.FC = () => {
             />
 
             <div className="text-center">
-              <button type="submit" className="btn btn-primary mt-4 w-full">
-                Send Message
+              <button
+                type="submit"
+                disabled={loading}
+                className="btn btn-primary mt-4 w-full"
+              >
+                {loading ? (
+                  <>
+                    Sending
+                    <span className="loading loading-dots loading-lg"></span>
+                  </>
+                ) : (
+                  "Send Message"
+                )}
               </button>
             </div>
           </fieldset>
