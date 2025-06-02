@@ -89,11 +89,11 @@ const Footer = () => {
           </Link>
         </nav>
         <aside className="flex justify-center items-center mx-auto md:mx-0 mt-6 md:mt-0 h-full order-2 md:order-3">
-          <Link to={"/"} className="btn btn-ghost text-xl">
+          <Link to={"/"} className="btn btn-ghost text-xl p-0">
             <img
               src={Logo}
               alt="Logo"
-              className="h-60 w-auto max-w-full object-contain"
+              className="h-40 w-auto max-w-full object-contain"
             />
           </Link>
         </aside>
