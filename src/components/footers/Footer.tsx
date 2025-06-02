@@ -59,7 +59,7 @@ const Footer = () => {
             />
           </Link>
         </aside> */}
-        <nav className="text-md md:text-lg order-3 md:order-2 flex flex-col items-center justify-center mx-auto bg-red-200 col-span-2 md:col-span-1">
+        <nav className="text-md md:text-lg order-3 md:order-2 flex flex-col items-center justify-center mx-auto col-span-2 md:col-span-1">
           <h6 className="footer-title">Contact Details</h6>
           <Link
             to="tel:+966582500879"
