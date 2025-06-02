@@ -75,7 +75,7 @@ const ContactForm: React.FC = () => {
 
     try {
       const response = await fetch(
-        "https://form.saasa.dev/api/forms/your-form-id",
+        "https://formapi.saasa.shop/api/data/683d42447259f1c23b80a664",
         {
           method: "POST",
           headers: {
