@@ -9,7 +9,7 @@ import bgImg from "../../assets/hm_scrap_6.webp"; // Replace with your actual im
 const ContactSection = () => {
   return (
     <section
-      className="relative bg-fixed bg-center bg-cover bg-no-repeat py-20 w-full"
+      className="relative container mx-auto max-w-full bg-fixed bg-center bg-cover bg-no-repeat py-20 w-full"
       style={{ backgroundImage: `url(${bgImg})` }} // Replace with your image path
     >
       <div className="absolute inset-0 bg-black/60 backdrop-blur-xs"></div>
@@ -35,7 +35,7 @@ const ContactSection = () => {
         </motion.p>
 
         <motion.div
-          className="grid md:grid-cols-2 gap-4 items-stretch content-center w-full"
+          className="grid grid-cols-1 md:grid-cols-2 gap-4 items-stretch content-center w-full"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}

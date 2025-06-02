@@ -32,44 +32,6 @@ const ContactForm: React.FC = () => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  // const handleSubmit = (e: React.FormEvent) => {
-  //   e.preventDefault();
-
-  //   try {
-  //     const { name, phone, email, message } = formData;
-
-  //     const text = `Hello, I'm ${name}.\nMessage: ${message}.\nPhone: ${phone}\nEmail: ${email}`;
-  //     const encodedText = encodeURIComponent(text);
-  //     const recipientNumber = "966548581513"; // No '+' sign
-
-  //     const isMobile =
-  //       /Android|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i.test(
-  //         navigator.userAgent
-  //       );
-  //     const baseUrl = isMobile
-  //       ? `https://wa.me/${recipientNumber}?text=${encodedText}`
-  //       : `https://api.whatsapp.com/send?phone=${recipientNumber}&text=${encodedText}`;
-
-  //     window.open(baseUrl, "_blank");
-
-  //     setStatusMessage({
-  //       type: "success",
-  //       text: "WhatsApp message window opened successfully.",
-  //     });
-  //   } catch (err) {
-  //     console.error(err);
-  //     setStatusMessage({
-  //       type: "error",
-  //       text: "Failed to open WhatsApp. Please try again.",
-  //     });
-  //   } finally {
-  //     setFormData({ name: "", phone: "", email: "", message: "" });
-
-  //     // Clear the message after a few seconds
-  //     setTimeout(() => setStatusMessage(null), 4000);
-  //   }
-  // };
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
@@ -112,7 +74,7 @@ const ContactForm: React.FC = () => {
       initial={{ opacity: 0, y: 50 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.8, ease: "easeOut" }}
-      className="card shadow-2xl bg-base-100 max-w-2xl"
+      className="card shadow-2xl bg-base-100 w-full"
     >
       <div className="card-body">
         <h2 className="text-3xl font-bold text-center mb-6 text-primary">
