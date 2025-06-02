@@ -12,7 +12,6 @@ const Header = () => {
   return (
     <header
       className="navbar bg-base-100 shadow-sm fixed z-10 top-0"
-      style={{ maxWidth: "2160px" }}
     >
       <div className="navbar-start">
         <div className="dropdown">
