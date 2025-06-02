@@ -59,7 +59,7 @@ const Footer = () => {
             />
           </Link>
         </aside> */}
-        <nav className="text-lg order-3 md:order-2">
+        <nav className="text-lg order-3 md:order-2 flex flex-col items-center justify-center col-span-2 md:col-span-1 mx-auto">
           <h6 className="footer-title">Contact Details</h6>
           <Link
             to="tel:+966582500879"
@@ -88,7 +88,7 @@ const Footer = () => {
             ansarishams333@gmail.com
           </Link>
         </nav>
-        <aside className="flex justify-center items-center mx-auto md:mx-0 mt-6 md:mt-0 h-full order-2 md:order-3">
+        <aside className="flex justify-center items-center mx-auto md:mx-auto mt-6 md:mt-0 h-full order-2 md:order-3">
           <Link to={"/"} className="btn btn-ghost text-xl p-0">
             <img
               src={Logo}
