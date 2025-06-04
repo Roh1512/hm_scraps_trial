@@ -1,5 +1,5 @@
 import { Link } from "react-router"; // Fixed: use react-router-dom, not "react-router"
-import LogoSmall from "../../assets/HM_LOGO_96.svg";
+// import LogoSmall from "../../assets/HM_LOGO_96.svg";
 import LogoLarge from "../../assets/HMHAA-LOGO_PRIMARY COLOR.svg";
 
 const LogoButton = () => {
