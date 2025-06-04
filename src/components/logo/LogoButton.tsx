@@ -1,13 +1,19 @@
 import { Link } from "react-router"; // Fixed: use react-router-dom, not "react-router"
-import LogoSmall from "../../assets/HM_LOGO_96.svg";
+import LogoSmall from "../../assets/HMHAA-LOGO_ONLY 1.svg";
 import LogoLarge from "../../assets/HMHAA-LOGO_PRIMARY COLOR.svg";
 
 const LogoButton = () => {
   return (
     <Link to="/" className="btn btn-ghost text-xl" aria-label="Home">
       <picture>
-        <source media="(min-width: 1024px)" srcSet={LogoLarge} />
-        <source media="(min-width: 640px)" srcSet={LogoSmall} />
+        <source
+          media="(min-width: 1024px)"
+          srcSet={`${LogoLarge} 1x, ${LogoLarge} 2x`} // Use a higher-res version
+        />
+        <source
+          media="(min-width: 640px)"
+          srcSet={`${LogoSmall} 1x, ${LogoSmall} 2x`}
+        />
         <img
           src={LogoSmall}
           alt="HMHAA Logo"
