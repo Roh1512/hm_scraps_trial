@@ -4,7 +4,7 @@ import LogoLarge from "../../assets/HMHAA-LOGO_PRIMARY COLOR.svg";
 
 const LogoButton = () => {
   return (
-    <Link to="/" className="btn btn-ghost text-xl" aria-label="Home">
+    <Link to="/" className="btn btn-ghost text-xl p-0" aria-label="Home">
       <img
         src={LogoLarge}
         alt="HMHAA Logo"
